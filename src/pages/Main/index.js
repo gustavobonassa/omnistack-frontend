@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import api from '../../services/api';
 
 import logo from "../../assets/logo.svg";
-import "./styles.css";
+
+import { Container, SubmitButton } from './styles';
 
 export default class Main extends Component {
     state = {
@@ -26,7 +27,7 @@ export default class Main extends Component {
 
     render() {
         return (
-            <div id="main-container">
+            <Container>
                 <form onSubmit={this.handleSubmit}>
                     <img src={logo} alt="" />
                     <input 
@@ -34,9 +35,9 @@ export default class Main extends Component {
                         value={this.state.newBox}
                         onChange={this.handleInputChange}
                     />
-                    <button type="submit">Criar</button>
+                    <SubmitButton type="submit">Criar</SubmitButton>
                 </form>
-            </div>
+            </Container>
         );
     }
 }
