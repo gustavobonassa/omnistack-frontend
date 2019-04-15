@@ -7,8 +7,10 @@ import socket from 'socket.io-client';
 
 import { MdInsertDriveFile } from 'react-icons/md';
 
+import { Container } from './styles';
+
 import logo from "../../assets/logo.svg"
-import './styles.css';
+
 //componentDidMount é disparado automaticamente quando o componente e renderizado em tela
 export default class Box extends Component {
     state = { box: {} }
@@ -46,7 +48,7 @@ export default class Box extends Component {
 
     render() {
         return (
-            <div id="box-container">
+            <Container>
                 <header>
                     <img src={logo} alt="" />
                     <h1>{this.state.box.title}</h1>
@@ -78,7 +80,7 @@ export default class Box extends Component {
                         </li>
                     )) }
                 </ul>
-            </div>
+            </Container>
         );
     }
 }
